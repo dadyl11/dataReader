@@ -10,9 +10,7 @@
 
   <properties>
     <maven-compiler-plugin>3.7.0</maven-compiler-plugin>
-    <junit-jupiter-api>5.2.0</junit-jupiter-api>
-    <junit-jupiter-params>5.2.0</junit-jupiter-params>
-    <log4j-slf4j-impl>2.11.0</log4j-slf4j-impl>
+    <spock-core>2.0-M2-groovy-3.0</spock-core>
   </properties>
 
   <build>
@@ -33,7 +31,7 @@
     <dependency>
       <groupId>org.spockframework</groupId>
       <artifactId>spock-core</artifactId>
-      <version>0.7-groovy-2.0</version>
+      <version>${spock-core}</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
