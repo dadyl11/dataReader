@@ -17,7 +17,7 @@ class CSVFileReaderTest extends Specification {
     def "Should read csv file and return Lists with first element 'id'"() {
         when: "The 'readCSV' is ran"
         def list = csvFileReader.readCSV(CSV_FILE_PATH)
-        String result = list.get(0).get(index)
+        def result = list.get(0).get(index)
         then: "result should be List with first element 'id'"
         result.equals(elementName)
         where:
@@ -29,6 +29,17 @@ class CSVFileReaderTest extends Specification {
         4     || "salary"
     }
 
-    def "CreateMap"() {
+    def "Should create a Map with jobs and sum of salaries"() {
+        when: "The 'createMAp' is ran"
+        def list = csvFileReader.readCSV(CSV_FILE_PATH)
+        def map = csvFileReader.createMap(list)
+        def result = map.get(job)
+        then: "result should be List with first element 'id'"
+        result == (salary)
+        where:
+        job         || salary
+        "Teacher"   || 6240.30
+        "Janitor"   || 26920.90
+        "Priest"    || 15240.00
     }
 }
