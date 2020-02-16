@@ -14,11 +14,11 @@ class CSVFileReaderTest extends Specification {
         result.size() == 6
     }
 
-    def "Should read csv file and return Lists with first element 'id'"() {
+    def "Should read csv file and return Lists with elements from file"() {
         when: "The 'readCSV' is ran"
         def list = csvFileReader.readCSV(CSV_FILE_PATH)
         def result = list.get(0).get(index)
-        then: "result should be List with first element 'id'"
+        then: "result should match the first row of CSV file"
         result.equals(elementName)
         where:
         index || elementName
@@ -34,12 +34,12 @@ class CSVFileReaderTest extends Specification {
         def list = csvFileReader.readCSV(CSV_FILE_PATH)
         def map = csvFileReader.createMap(list)
         def result = map.get(job)
-        then: "result should be List with first element 'id'"
+        then: "Result should be jobs with sum of salaries"
         result == (salary)
         where:
-        job         || salary
-        "Teacher"   || 6240.30
-        "Janitor"   || 26920.90
-        "Priest"    || 15240.00
+        job       || salary
+        "Teacher" || 6240.30
+        "Janitor" || 26920.90
+        "Priest"  || 15240.00
     }
 }
