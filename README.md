@@ -7,3 +7,5 @@ How to run
 2. Sample file are placed in the "resources" directory.
 3. Run "Demo" class and the results will be displayed in the terminal.
 
+The tests are written using Spock
+
